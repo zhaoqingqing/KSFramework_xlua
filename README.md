@@ -1,5 +1,5 @@
 
-![KSFramework](Docs/KSFramework-logo.png)
+![KSFramework](https://github.com/mr-kelly/KSFramework/blob/master/Docs/KSFramework-logo.png)
 
 [**K**Engine](https://github.com/mr-kelly/KEngine) + [**X**Lua](https://github.com/Tencent/xLua)+ **Framework** = KXFramework
 
