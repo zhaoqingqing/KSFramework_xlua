@@ -176,10 +176,10 @@ namespace KEngine.Editor
             BuildOptions opt = isDevelopment
                 ? (BuildOptions.Development | BuildOptions.AllowDebugging | BuildOptions.ConnectWithProfiler)
                 : BuildOptions.None;
-#if UNITY_5
+#if UNITY_5 || UNITY_2017_1_OR_NEWER
             return PerformBuild("Apps/IOSProjects/" + ipaName, BuildTarget.iOS, opt);
 #else
-            return PerformBuild("Apps/IOSProjects/" + ipaName, BuildTarget.iPhone, opt);
+            return PerformBuild("Apps/IOSProjects/" + ipaName, BuildTarget.iOS, opt);
 #endif
         }
 

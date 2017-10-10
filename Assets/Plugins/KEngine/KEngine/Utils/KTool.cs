@@ -479,6 +479,15 @@ namespace KEngine
             return ((ushort)((((uint)(high)) >> 16) & 0xffff));
         }
 
+        public static string FormatToAssetUrl(string filePath)
+        {
+            var newFilePath1 = filePath.Replace("\\", "/");
+            var newFilePath2 = newFilePath1.Replace("//", "/").Trim();
+            newFilePath2 = newFilePath2.Replace("///", "/").Trim();
+            newFilePath2 = newFilePath2.Replace("\\\\", "/").Trim();
+            return newFilePath2;
+        }
+
         #region Int + Int = Long
 
         public static ulong MakeLong(uint high, uint low)
