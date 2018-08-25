@@ -29,5 +29,6 @@ function new(table, ctorFunc)
 
     return tb
 end
-
+---@type Component
+AppSettings 			= CS.AppSettings
 print("Init.lua script finish!")

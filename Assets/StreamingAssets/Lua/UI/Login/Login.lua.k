@@ -31,7 +31,7 @@ end
 function UILogin:OnInit(controller)
 
     Log.Info("================================ UILogin:OnInit ============================")
-
+	Log.Info(string.format("Controller type: %s, Button type full name: %s", type(self.Controller),     self.LoginText))
     --local text = self:GetUIText("Login")
     --text.text = I18N.Str("UILogin.LoginDescText")
     -- read LoginText from Outlet
@@ -40,7 +40,7 @@ function UILogin:OnInit(controller)
     self.LoginButtonText.text = I18N.Str('UILogin.LoginButtonText')
     local btn = self.LoginButton
 
-    print(string.format("Controller type: %s, Button type full name: %s", type(self.Controller), btn:GetType().FullName))
+  
 
     --if UnityEngine and  UnityEngine.Vector3 then -- static code binded!
         btn.onClick:RemoveAllListeners()
@@ -73,15 +73,19 @@ end
 function UILogin:OnOpen(num1)
     print("UILogin:OnOpen, arg1: " .. tostring(num1))
 
-    if AppSettings then
-        using("AppSettings") -- namespace all
+    --if AppSettings then
+    --    using("AppSettings") -- namespace all
         Log.Info("================================ Read settings throught Lua ============================")
-        for config in foreach(GameConfigSettings.GetAll()) do
-            print(string.format("Lua Read Setting, Id: %s, Value: %s", config.Id, config.Value))
-        end
-    else
-        print("Not found AppSettings, maybe no static code generate yet")
-    end
+        --for config in foreach(AppSettings.GameConfigSettings.GetAll()) do
+        --    print(string.format("Lua Read Setting, Id: %s, Value: %s", config.Id, config.Value))
+        --end
+    ---TODO 遍历C#的Enumerator
+    --for k, config in pairs(AppSettings.GameConfigSettings.GetEnumerator()) do
+    --    print(string.format("Lua Read Setting, Id: %s, Value: %s", config.Id, config.Value))
+    --end
+    --else
+    --    print("Not found AppSettings, maybe no static code generate yet")
+    --end
 
     local openCount
     openCount= Cookie.Get('UILogin.OpenCount')
