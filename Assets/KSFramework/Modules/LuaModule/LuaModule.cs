@@ -151,7 +151,9 @@ namespace KSFramework
             }
             else
             {
-                script = KResourceModule.LoadSyncFromPersistentDataPath(scriptPath);
+                //热更新从PersistentDataPath路径读取
+                //script = KResourceModule.LoadSyncFromPersistentDataPath(scriptPath);
+                script = KResourceModule.LoadSyncFromStreamingAssets(scriptPath);
             }
             var ret = ExecuteScript(script, scriptRelativePath);
             return ret;
