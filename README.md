@@ -1,3 +1,6 @@
+xlua分支的修改已同步到master:https://github.com/mr-kelly/KSFramework ，这个仓库不会更新，建议移步到master.
+
+
 
 ![KSFramework](https://github.com/mr-kelly/KSFramework/blob/master/Docs/KSFramework-logo.png)
 
